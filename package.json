@@ -12,7 +12,6 @@
     "uniqid": "^5.4.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://sth21.github.io/shopping-cart",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -r https://github.com/sth21/shopping-cart",

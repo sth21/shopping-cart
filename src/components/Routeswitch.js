@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Cart from './Cart';
 import Home from './Home';
 import Itemview from './Itemview';
@@ -12,10 +13,10 @@ export default function Routeswitch() {
             <Router>
                     <Nav />
                     <Routes>
-                        <Route path="/shopping-cart" element={ <Home /> } />
-                        <Route path="/shopping-cart/shop" element={ <Shop /> } />
-                        <Route path="/shopping-cart/itemview" element={ <Itemview /> } />
-                        <Route path="/shopping-cart/cart" element={ <Cart /> } />
+                        <Route path="/" element={ <Home /> } />
+                        <Route path="/shop" element={ <Shop /> } />
+                        <Route path="/itemview" element={ <Itemview /> } />
+                        <Route path="/cart" element={ <Cart /> } />
                     </Routes>
             </Router>
         </div>
