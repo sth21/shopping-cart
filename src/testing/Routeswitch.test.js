@@ -4,6 +4,6 @@ import Routeswitch from '../components/Routeswitch';
 
 test("Renders Nav and Home by default", () => {
     render( <Routeswitch /> );
-    expect( screen.getByText(/nav/i)).toBeInTheDocument();
-    expect( screen.getByText(/home/i)).toBeInTheDocument();
+    expect( screen.getByRole("nav")).toBeInTheDocument();
+    expect(screen.getByRole("main").className).toBe("home");
 });
