@@ -8,9 +8,13 @@ import Nav from './Nav';
 import Shop from './Shop';
 
 export default function Routeswitch() {
+
+    const [ order, setOrder ] = useState();
+
     const [ orderCount, setOrderCount ] = useState(0);
 
-    const handleOrderChange = (diff) => setOrderCount(( prevOrderCount ) => prevOrderCount + diff);
+    // Resizes the number of unique items in the order that is displayed in the Cart nav link
+    const resizeOrderDisplayCount = (diff) => setOrderCount(( prevOrderCount ) => prevOrderCount + diff);
 
     return (
         <div className = "app">
@@ -18,13 +22,21 @@ export default function Routeswitch() {
                     <Nav orderCount = { orderCount }/>
                     <Routes>
                         <Route path = "/" element = { <Home /> } />
-                        <Route path = "/shop" element = { <Shop /> } />
+                        <Route 
+                            path = "/shop" 
+                            element = { 
+                                <Shop 
+                                    // some function for changing order
+                                /> 
+                            }   
+                        />
                         <Route path = "/itemview" element = { <Itemview /> } />
                         <Route 
                             path = "/cart" 
                             element = { 
                                 <Cart 
-                                    resizeOrderDisplayCount = { handleOrderChange } 
+                                    resizeOrderDisplayCount = { resizeOrderDisplayCount } 
+                                    order = { order }
                                 /> 
                             } 
                         />
