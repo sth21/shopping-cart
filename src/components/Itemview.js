@@ -1,6 +1,12 @@
 export default function Itemview(props) {
-  // Attains the quantity and item to be added to the order
-  // NEED TO BE TESTED
+  /*
+  To test:
+    handlePurchase - does not add item on condition that no quantity exists
+    handlePurchase - updates order properly
+    unloadItemView - properly changes url
+    displays proper count in cart
+  */
+
   const handlePurchase = (e) => {
     e.preventDefault();
     const quantity = parseInt(document.getElementById("quantity").value, 10);
@@ -10,13 +16,12 @@ export default function Itemview(props) {
     props.updateOrder(newItem);
   };
   
-  // NEEDS TO BE TESTED (navigate)
   return (
     <main className="itemview" role="main">
       <div className="itemInfoWrapper">
-        <img src={ props.item.imgSrc } alt={ "Image of a " + props.item.name }></img>
+        <img src={ props.item.imgSrc || "" } alt={ "Image of a " + (props.item.name || "") }></img>
         <div className="itemInfo">
-          <h3>{ props.item.name }</h3>
+          <h3>{ props.item.name || "" }</h3>
           <p>Description of item</p>
           <div className="controls">
             <div className="purchase-control">

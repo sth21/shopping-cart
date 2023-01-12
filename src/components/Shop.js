@@ -27,6 +27,14 @@ import turkeySausageEggCheese from '../media/turkeysausage-egg-cheese.png';
 import sausageEggCheese from '../media/sausage-egg-cheese.png';
 
 export default function Shop(props) {
+  /*
+  To test:
+    handleClick - properly loads itemView if image clicked
+    renderMenu - correctly loads each menu x3
+    return - conditional disabled x3
+  */
+
+
   const [ activeMenu, setActiveMenu ] = useState("donuts");
 
   // All menu items
@@ -58,8 +66,6 @@ export default function Shop(props) {
     ],
   };
 
-  // Manages what happens when user selects an item to view
-  // NEEDS TO BE TESTED
   const handleClick = (e) => {
     const item = (e.target.children.length === 0) ? e.target.parentNode : e.target;
     const index = item.dataset.index;
@@ -67,8 +73,6 @@ export default function Shop(props) {
     props.loadItemView( items[menu][index.toString()] );
   };
 
-  // Renders the menu section of the component
-  // NEEDS TO BE TESTED
   const renderMenu = (menuName, items) => {
     return (
       <div className="items-container">
@@ -84,7 +88,6 @@ export default function Shop(props) {
     );
   };
   
-  // NEEDS TO BE TESTED (onClick / disabled)
   return (
     <main className="shop">
       <nav className="shop-nav">

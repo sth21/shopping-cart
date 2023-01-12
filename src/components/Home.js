@@ -1,10 +1,13 @@
 import React from 'react';
 
 export default function Home() {
-  // TODO: Add link functionality to go to shop in Call to Action
-  
-  
-  
+  /*
+  To test: 
+    call to action url change
+
+  To implement: 
+    call to action url change
+  */
   
   return (
     <main className="home" role="main">Home</main>
