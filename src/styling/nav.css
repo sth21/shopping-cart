@@ -1,0 +1,25 @@
+nav.nav img {
+    height: 5em;
+    width: 15em;
+}
+
+nav.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 0em;
+}
+
+nav.nav .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+nav.nav .links a, nav.nav .links a:active, nav.nav .links a:hover, nav.nav .links a:visited, nav.nav .links a:link {
+    text-decoration: none;
+}
+
+nav.nav a {
+    font-size: 1.5rem;
+}

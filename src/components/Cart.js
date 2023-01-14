@@ -1,18 +1,13 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 export default function Cart(props) {
-  /*
-  To test:
-    getOrderItem - returns proper item from props.order
-    removeOne - properly removes one of that item from order
-    removeAll - properly remove all of that item from order
-    renderCart - properly maps out all items from cart
 
-  To implement:
-    ability to checkout (clears order, gives alert message)
-    ability to see total items and total cost
-  */
-  
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.classList.add('cart');
+
+    return () => body.classList.remove('cart');
+  }, []);
+
   const getOrderItem = (e) => {
     return { ...props.order[ e.target.parentNode.parentNode.dataset.index ]};
   }

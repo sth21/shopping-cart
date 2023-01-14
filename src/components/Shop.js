@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 
 // Donuts
@@ -28,6 +28,13 @@ import sausageEggCheese from '../media/sausage-egg-cheese.png';
 
 export default function Shop(props) {
   const [ activeMenu, setActiveMenu ] = useState("donuts");
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.classList.add('shop');
+
+    return () => body.classList.remove('shop');
+  }, []);
 
   // All menu items
   const items = {

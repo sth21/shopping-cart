@@ -2,8 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
-import donuttyLogo from '../media/Donutty.svg';
+import '../styling/nav.css';
+import donuttyLogo from '../media/DonuttyLight.png';
 
 export default function Nav(props) {  
   const location = useLocation();

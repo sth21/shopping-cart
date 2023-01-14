@@ -53,50 +53,26 @@ table {
     font-size: 14px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Jost:wght@400;700&display=swap');
+
 body {
-    height: inherit;
-    width: inherit;
     padding: 0em 5em;
     background-size: 100vw;
-    color: white;
+    background-color: white;
+    font-family: 'Jost', sans-serif;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./media/donuts.jpg');
-    background-size: 100vw;
-    filter: brightness(0.3);
-    z-index: -1;
-  }
-
-img {
-    height: 2em;
-    width: 2em;
+body, #root, .app {
+    min-height: inherit;
+    max-width: inherit;
 }
 
-nav > img {
-    height: 5em;
-    width: 10em;
+.app {
+    min-width: 100vh;
+    max-width: 100vw;
+    color: black;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2em 0em;
-}
-
-.links {
-    display: flex;
-    justify-content: space-between;
-    gap: 3em;
-}
-
-nav a {
-    font-size: 1.5rem;
+a {
+    color: inherit;
 }
