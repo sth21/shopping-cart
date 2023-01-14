@@ -27,14 +27,6 @@ import turkeySausageEggCheese from '../media/turkeysausage-egg-cheese.png';
 import sausageEggCheese from '../media/sausage-egg-cheese.png';
 
 export default function Shop(props) {
-  /*
-  To test:
-    handleClick - properly loads itemView if image clicked
-    renderMenu - correctly loads each menu x3
-    return - conditional disabled x3
-  */
-
-
   const [ activeMenu, setActiveMenu ] = useState("donuts");
 
   // All menu items
@@ -78,7 +70,7 @@ export default function Shop(props) {
       <div className="items-container">
         { items.map((item, index) => {
           return (
-            <div className="item" key={ item.key } onClick={ handleClick } role="button" data-index={ index } data-menu={ menuName }>
+            <div title="item" className="item" key={ item.key } onClick={ handleClick } role="button" data-index={ index } data-menu={ menuName }>
               <img src={ item.imgSrc } alt={ "Image of a " + item.name }></img>
               <h4>{ item.name }</h4>
             </div>
@@ -91,7 +83,7 @@ export default function Shop(props) {
   return (
     <main className="shop">
       <nav className="shop-nav">
-        <h2 role="button" onClick={ () => setActiveMenu("donuts") } disabled={(activeMenu === "donuts")}>Donuts</h2>
+        <h2 role="button" onClick={ () => setActiveMenu("donuts") } disabled={(activeMenu === "donuts")}>Donuts { activeMenu }</h2>
         <h2 role="button" onClick={ () => setActiveMenu("coffee") } disabled={(activeMenu === "coffee")}>Coffee</h2>
         <h2 role="button" onClick={ () => setActiveMenu("sandwiches") } disabled={(activeMenu === "sandwiches")}>Sandwiches</h2>
       </nav>

@@ -33,7 +33,7 @@ export default function Routeswitch() {
                     .filter((item) => item !== null)
             );
         } else {
-            setOrder((prevOrder) => prevOrder.concat(newItem));
+            setOrder((prevOrder) => [ ...prevOrder, newItem ]);
         }
         setOrderCount((prevOrderCount) => prevOrderCount + addQuantity);
     };

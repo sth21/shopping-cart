@@ -1,12 +1,11 @@
 /* eslint-disable testing-library/no-unnecessary-act */
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
 import Shop from '../components/Shop';
 import userEvent from '@testing-library/user-event';
 import { act } from '@testing-library/react';
-import uniqid from 'uniqid';
 
 test("Render donuts by default", () => {
     render(<Shop unloadItemView = { jest.fn() } />);
@@ -45,12 +44,49 @@ test("sets the correct item to active on click", () => {
     const foo = jest.fn();
     render(<Shop loadItemView = { foo } />);
     const glazedDonut = screen.getByText((content, element) => (
-        element.dataset.index === '1' 
+        element.dataset.index === '0' 
         && element.tagName.toLowerCase() === 'div'));
     userEvent.click(glazedDonut);
-    expect(foo).toHaveBeenCalledWith({ name: "Glazed Donut", price: .99, imgSrc: glazedDonut, key: uniqid() });
+    expect(foo).toHaveBeenCalledWith(expect.objectContaining({
+        name: "Glazed Donut",
+        price: .99,
+    }));
 });
 
 test("handles click bubbling", () => {
+    const foo = jest.fn();
+    render(<Shop loadItemView = { foo } />);
+    const div = screen.getByText((content, element) => (
+        element.dataset.index === '1' 
+        && element.tagName.toLowerCase() === 'div'));
 
+    const img = screen.getByText((content, element) => {
+        if (element.dataset.index === '1' && element.tagName.toLowerCase() === 'div') {
+            return within(element).getByRole("img");
+        }
+    });
+
+    const h4 = screen.getByText((content, element) => {
+        if (element.dataset.index === '1' && element.tagName.toLowerCase() === 'div') {
+            return within(element).getByRole("heading", { level: 4 });
+        }
+    });
+
+    userEvent.click(div);
+    expect(foo).toHaveBeenCalledWith(expect.objectContaining({
+        name: "Chocolate Glazed Donut",
+        price: .99,
+    }));
+
+    userEvent.click(img);
+    expect(foo).toHaveBeenCalledWith(expect.objectContaining({
+        name: "Chocolate Glazed Donut",
+        price: .99,
+    }));
+
+    userEvent.click(h4);
+    expect(foo).toHaveBeenCalledWith(expect.objectContaining({
+        name: "Chocolate Glazed Donut",
+        price: .99,
+    }));
 });

@@ -55,40 +55,110 @@ test("Calls updateOrder with proper quantity and item", () => {
     expect(fakeItem.quantity).toEqual(7);
 });
 
-const updateOrder = jest.fn((order, newItem) => {
-    const addQuantity = newItem.quantity;
-    const currentItemIndex = order.findIndex((item) => item.name === newItem.name);
-    if (currentItemIndex !== -1) {
-        return order
-            .map((item) => {
-                    if (item.name === newItem.name) {
-                        if (item.quantity + addQuantity < 1) {
-                            return null;
-                        } else {
-                            return { ...item, ...{ quantity: item.quantity + addQuantity } };
-                        }
-                    } else {
-                        return item;
-                    }
-            })
-            .filter((item) => item !== null);
-    } else {
-        return order.concat(newItem);
-    }
-});
-
 test("Updates order if first item in order", () => {
-    expect(updateOrder([], { name: "Glazed Donut", price: .99, quantity: 1 })).toEqual([{ name: "Glazed Donut", price: .99, quantity: 1 }]);
-});
+    const updateOrder = jest.fn((order, newItem) => {
+        const addQuantity = newItem.quantity;
+        const currentItemIndex = order.findIndex((item) => item.name === newItem.name);
+        if (currentItemIndex !== -1) {
+            return (order
+                .map((item) => {
+                        if (item.name === newItem.name) {
+                            if (item.quantity + addQuantity < 1) {
+                                return null;
+                            } else {
+                                return { ...item, ...{ quantity: item.quantity + addQuantity } };
+                            }
+                        } else {
+                            return item;
+                        }
+                })
+                .filter((item) => item !== null));
+        } else {
+            return ([ ...order, newItem ]);
+        }
+    });
 
-test("Updates order if not first item in order", () => {
-
+    const updated = updateOrder([], { name: "Glazed Donut", price: .99, quantity: 1 })
+    expect(updated).toEqual([{ name: "Glazed Donut", price: .99, quantity: 1 }]);
 });
 
 test("Updates order by appending an item type not already in order", () => {
-
+    const updateOrder = jest.fn((order, newItem) => {
+        const addQuantity = newItem.quantity;
+        const currentItemIndex = order.findIndex((item) => item.name === newItem.name);
+        if (currentItemIndex !== -1) {
+            return (order
+                .map((item) => {
+                        if (item.name === newItem.name) {
+                            if (item.quantity + addQuantity < 1) {
+                                return null;
+                            } else {
+                                return { ...item, ...{ quantity: item.quantity + addQuantity } };
+                            }
+                        } else {
+                            return item;
+                        }
+                })
+                .filter((item) => item !== null));
+        } else {
+            return ([ ...order, newItem ]);
+        }
+    });
+    
+    const updated = updateOrder([{ name: "Chocolate Glazed Donut, price: .99, quantity: 1" }], { name: "Glazed Donut", price: .99, quantity: 1 })
+    expect(updated).toEqual([{ name: "Chocolate Glazed Donut, price: .99, quantity: 1" }, { name: "Glazed Donut", price: .99, quantity: 1 }]);
 });
 
 test("Remove an item from an order", () => {
+    const updateOrder = jest.fn((order, newItem) => {
+        const addQuantity = newItem.quantity;
+        const currentItemIndex = order.findIndex((item) => item.name === newItem.name);
+        if (currentItemIndex !== -1) {
+            return (order
+                .map((item) => {
+                        if (item.name === newItem.name) {
+                            if (item.quantity + addQuantity < 1) {
+                                return null;
+                            } else {
+                                return { ...item, ...{ quantity: item.quantity + addQuantity } };
+                            }
+                        } else {
+                            return item;
+                        }
+                })
+                .filter((item) => item !== null));
+        } else {
+            return ([ ...order, newItem ]);
+        }
+    });
+    
+    const updated = updateOrder([{ name: "Glazed Donut", price: .99, quantity: 1 }], { name: "Glazed Donut", price: .99, quantity: -1 })
+    expect(updated).toEqual([]);
+});
 
+test("Change quantity of item in order", () => {
+    const updateOrder = jest.fn((order, newItem) => {
+        const addQuantity = newItem.quantity;
+        const currentItemIndex = order.findIndex((item) => item.name === newItem.name);
+        if (currentItemIndex !== -1) {
+            return (order
+                .map((item) => {
+                        if (item.name === newItem.name) {
+                            if (item.quantity + addQuantity < 1) {
+                                return null;
+                            } else {
+                                return { ...item, ...{ quantity: item.quantity + addQuantity } };
+                            }
+                        } else {
+                            return item;
+                        }
+                })
+                .filter((item) => item !== null));
+        } else {
+            return ([ ...order, newItem ]);
+        }
+    });
+    
+    const updated = updateOrder([{ name: "Chocolate Glazed Donut, price: .99, quantity: 1" }, { name: "Glazed Donut", price: .99, quantity: 1 }], { name: "Glazed Donut", price: .99, quantity: 4 })
+    expect(updated).toEqual([{ name: "Chocolate Glazed Donut, price: .99, quantity: 1" }, { name: "Glazed Donut", price: .99, quantity: 5 }]);
 });
