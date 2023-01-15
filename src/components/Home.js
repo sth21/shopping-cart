@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import '../styling/home.css';
 import ovenWidget from '../media/oven.png';
-import doughnutWidget from '../media/doughnut.png';
+import donutWidget from '../media/doughnut.png';
 import donuttyDark from '../media/DonuttyDark.svg';
 import donuttyLight from '../media/DonuttyLight.svg';
 
@@ -25,12 +25,16 @@ export default function Home() {
       <h2>Redefining the morning donut experience</h2>
       <div className="widget-container">
         <div className="widget">
-          <img src={ ovenWidget } alt="Oven icon"></img>
-          <h3>Always fresh</h3>
+          <div className="widget-img">
+            <img src={ ovenWidget } alt="Oven icon"></img>
+          </div>
+          <h3>Always <br /><span>fresh</span></h3>
         </div>
         <div className="widget">
-          <img src={ doughnutWidget } alt="Donut icon"></img>
-          <h3>Diverse options</h3>
+        <div className="widget-img">
+            <img src={ donutWidget } alt="Donut icon"></img>
+          </div>
+          <h3>Diverse <br /><span>options</span></h3>
         </div>
       </div>
       <button className="call-to-action"><Link to="/shop">Shop Now</Link></button>

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styling/nav.css';
-import donuttyLogo from '../media/DonuttyLight.png';
+import donuttyLogo from '../media/DonuttyLight.svg';
 
 export default function Nav(props) {  
   const location = useLocation();
