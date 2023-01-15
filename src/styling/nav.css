@@ -23,3 +23,23 @@ nav.nav .links a, nav.nav .links a:active, nav.nav .links a:hover, nav.nav .link
 nav.nav a {
     font-size: 2rem;
 }
+
+.shop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.shop-nav h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.shop-nav h2[disabled] {
+    color: var(--red);
+    font-weight: bold;
+}

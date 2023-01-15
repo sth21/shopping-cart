@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
+import '../styling/shop.css';
 
 // Donuts
 import glazedDonut from '../media/glazed-donut.png';
@@ -90,12 +91,12 @@ export default function Shop(props) {
   return (
     <main className="shop">
       <nav className="shop-nav">
-        <h2 role="button" onClick={ () => setActiveMenu("donuts") } disabled={(activeMenu === "donuts")}>Donuts { activeMenu }</h2>
+        <h2 role="button" onClick={ () => setActiveMenu("donuts") } disabled={(activeMenu === "donuts")}>Donuts</h2>
         <h2 role="button" onClick={ () => setActiveMenu("coffee") } disabled={(activeMenu === "coffee")}>Coffee</h2>
         <h2 role="button" onClick={ () => setActiveMenu("sandwiches") } disabled={(activeMenu === "sandwiches")}>Sandwiches</h2>
       </nav>
       <div className="shop-wrapper">
-        <h3>{ activeMenu }</h3>
+        <h3>{ activeMenu.charAt(0).toUpperCase() + activeMenu.substring(1, activeMenu.length) }</h3>
         { renderMenu(activeMenu, items[ activeMenu ]) }
       </div>
     </main>

@@ -3,19 +3,14 @@ import { useEffect } from 'react';
 import '../styling/home.css';
 import ovenWidget from '../media/oven.png';
 import donutWidget from '../media/doughnut.png';
-import donuttyDark from '../media/DonuttyDark.svg';
-import donuttyLight from '../media/DonuttyLight.svg';
 
 export default function Home() {
   useEffect(() => {
     const body = document.querySelector('body');
     body.classList.add('home');
-    const donutty = document.querySelector(`img[alt="Logo of Donutty"]`);
-    donutty.src = donuttyLight;
 
     return () => { 
       body.classList.remove('home');
-      donutty.src = donuttyDark;
     };
 
   }, []);
