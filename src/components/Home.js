@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <main className="home" role="main">
-      <h2>Redefining the morning donut experience</h2>
+      <h2>Re<span className="red">defining</span> the morning donut experience</h2>
       <div className="widget-container">
         <div className="widget">
           <div className="widget-img">
@@ -37,7 +37,7 @@ export default function Home() {
           <h3>Diverse <br /><span>options</span></h3>
         </div>
       </div>
-      <button className="call-to-action"><Link to="/shop">Shop Now</Link></button>
+      <button className="call-to-action"><Link to="/shop">SHOP NOW</Link></button>
     </main>
   );
 }
