@@ -9,7 +9,7 @@ import { act } from '@testing-library/react';
 
 test("Render donuts by default", () => {
     render(<Shop unloadItemView = { jest.fn() } />);
-    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("donuts");
+    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("Donuts");
 });
 
 test("Renders different menu pages on click", () => {
@@ -19,13 +19,13 @@ test("Renders different menu pages on click", () => {
     const sandwichesButton = screen.getByRole("button", { name: /sandwiches/i });
     
     act(() => userEvent.click(coffeeButton));
-    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("coffee");
+    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("Coffee");
 
     act(() => userEvent.click(sandwichesButton));
-    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("sandwiches");
+    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("Sandwiches");
 
     act(() => userEvent.click(donutsButton));
-    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("donuts");
+    expect(screen.getByRole("heading", { level: 3 }).textContent).toBe("Donuts");
 });
 
 test("Properly has current pages respective nav button disabled", () => {
