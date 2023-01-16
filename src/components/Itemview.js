@@ -31,7 +31,7 @@ export default function Itemview(props) {
               </div>
               <button onClick = { handlePurchase } type="submit">Add to cart</button>
             </div>
-            <button onClick={ () => props.unloadItemView(undefined) }>Go Back</button>
+            <button className="go-back" onClick={ () => props.unloadItemView(undefined) }>Go Back</button>
           </div>
         </div>
       </div>

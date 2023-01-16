@@ -29,3 +29,66 @@
 .shop .item img {
     height: 21.5em;
 }
+
+.itemview .itemInfoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.itemview .itemInfoWrapper > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.itemview .itemInfoWrapper > img {
+    width: 30%;
+}
+
+.itemview h3 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.itemview p {
+    font-size: 2rem;
+}
+
+.itemview .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemview .purchase-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+}
+
+.itemview .quantity-wrapper {
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.itemview .quantity-wrapper input  {
+    height: 1.5em;
+    width: 4em;
+}
+
+.itemview .purchase-control button, .itemview .go-back {
+    height: 2.5em;
+    width: 10em;
+    background: var(--red);
+    border-radius: 10px;
+    border: 1px solid var(--red);
+    color: white;
+}
