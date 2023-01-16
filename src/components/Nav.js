@@ -20,13 +20,15 @@ export default function Nav(props) {
     setDonuttyLogo( (location.pathname !== "/") ? DonuttyDark : DonuttyLight );
   }, [ location ]);
 
+  useEffect(() => window.scrollTo(0, 0), [ location.pathname ]);
+
   return (
     <nav className="nav" role="navigation">
       <img src={ donuttyLogo } alt="Logo of Donutty" />
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
-        <Link to="/cart">Cart({ props.orderCount })</Link>
+        <Link to="/cart">Cart ({ props.orderCount })</Link>
       </div>
     </nav>
   );

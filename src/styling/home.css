@@ -15,6 +15,12 @@ body.home .app {
     color: white;
 }
 
+.home nav.nav {
+    background-color: transparent;
+    position: static;
+    z-index: 0;
+}
+
 .home img {
     height: 2em;
     width: 2em;

@@ -38,6 +38,8 @@ export default function Routeswitch() {
         setOrderCount((prevOrderCount) => prevOrderCount + addQuantity);
     };
 
+    const resetOrder = () => { setOrder([]); setOrderCount(0); setActiveItem() };
+
     return (
         <div className = "app">
             <Router>
@@ -48,7 +50,7 @@ export default function Routeswitch() {
                             ? <Shop loadItemView = { setActiveItem } /> 
                             : <Itemview updateOrder = { updateOrder } item = { activeItem } unloadItemView = { setActiveItem } /> 
                         } />
-                        <Route path = "/cart" element = { <Cart order = { order } updateOrder = { updateOrder } /> } />
+                        <Route path = "/cart" element = { <Cart order = { order } updateOrder = { updateOrder } resetOrder = { resetOrder } /> } />
                     </Routes>
             </Router>
         </div>

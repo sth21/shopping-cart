@@ -1,12 +1,8 @@
-export default function Itemview(props) {
-  /*
-  To test:
-    handlePurchase - does not add item on condition that no quantity exists
-    handlePurchase - updates order properly
-    unloadItemView - properly changes url
-    displays proper count in cart
-  */
+import { useEffect } from "react";
 
+export default function Itemview(props) {
+  useEffect(() => window.scrollTo(0, 0), []);
+  
   const handlePurchase = (e) => {
     e.preventDefault();
     const quantity = parseInt(document.getElementById("quantity").value, 10);
@@ -22,7 +18,6 @@ export default function Itemview(props) {
         <img src={ props.item.imgSrc || "" } alt={ "Image of a " + (props.item.name || "") }></img>
         <div className="itemInfo">
           <h3>{ props.item.name || "" }</h3>
-          <p>Description of item</p>
           <div className="controls">
             <div className="purchase-control">
               <div className="quantity-wrapper">
