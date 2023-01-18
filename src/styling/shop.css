@@ -8,7 +8,7 @@
 
 .shop .items-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, clamp(300px, 25%, 600px));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 5em;
     justify-content: center;
 }
@@ -19,6 +19,9 @@
 }
 
 .shop .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -28,6 +31,7 @@
 
 .shop .item img {
     height: 21.5em;
+    width: 21.5em;
 }
 
 .itemview .itemInfoWrapper {
@@ -88,4 +92,15 @@
     border-radius: 10px;
     border: 1px solid var(--red);
     color: white;
+}
+
+@media ( max-width: 900px ) {
+    .shop .item img {
+        height: 16em;
+        width: 16em;
+    }
+
+    .shop .items-container h4 {
+        font-size: 1.75rem;
+    }
 }
