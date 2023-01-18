@@ -62,3 +62,41 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+@media ( max-width: 900px ) {
+    .cart-item-wrapper img {
+        height: 20em;
+        width: 20em;
+    }
+
+    .cart h4 {
+        font-size: 1.75rem;
+    }
+
+    .cart p {
+        font-size: 1.25rem;
+    }
+}
+
+@media ( max-width: 650px ) {
+    .cart button {
+        font-size: .75rem;
+    }
+
+    .cart-item-wrapper img {
+        height: 15em;
+        width: 15em;
+    }
+
+    .cart h4 {
+        font-size: 1.35rem;
+    }
+
+    .cart p {
+        font-size: 1rem;
+    }
+
+    .cart-item-header {
+        gap: 1.5em;
+    }
+}

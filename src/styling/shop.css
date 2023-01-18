@@ -40,6 +40,7 @@
     justify-content: center;
     padding-top: 2em;
     padding-bottom: 2em;
+    gap: 2em;
 }
 
 .itemview .itemInfoWrapper > * {
@@ -48,11 +49,11 @@
 }
 
 .itemview .itemInfoWrapper > img {
-    width: 30%;
+    width: 35%;
 }
 
 .itemview h3 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
 }
 
@@ -88,6 +89,7 @@
 .itemview .purchase-control button, .itemview .go-back {
     height: 2.5em;
     width: 10em;
+    font-size: 1.25rem;
     background: var(--red);
     border-radius: 10px;
     border: 1px solid var(--red);
@@ -95,6 +97,8 @@
 }
 
 @media ( max-width: 900px ) {
+    
+    
     .shop .item img {
         height: 16em;
         width: 16em;
@@ -102,5 +106,37 @@
 
     .shop .items-container h4 {
         font-size: 1.75rem;
+    }
+
+    .itemview h3 {
+        font-size: 3.25rem;
+    }
+
+    .itemview .quantity-wrapper input  {
+        height: 1.5em;
+        width: 3.5em;
+    }
+
+    .itemview .purchase-control button, .itemview .go-back {
+        font-size: 1rem;
+        height: 2.5em;
+        width: 10em;
+    }
+}
+
+@media ( max-width: 650px ) {
+    .itemview h3 {
+        font-size: 2.75rem;
+    }
+
+    .itemview .quantity-wrapper input  {
+        height: 1.25em;
+        width: 3em;
+    }
+
+    .itemview .purchase-control button, .itemview .go-back {
+        font-size: 1rem;
+        height: 2em;
+        width: 8em;
     }
 }
