@@ -70,17 +70,23 @@ body {
     font-family: 'Jost', sans-serif;
 }
 
-body, #root, .app {
-    min-height: inherit;
-    max-width: inherit;
-}
-
-.app {
-    min-width: 100vh;
-    max-width: 100vw;
-    color: black;
-}
-
 a {
     color: inherit;
+}
+
+@media ( max-width: 900px ) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+@media ( max-width: 650px ) {
+    :root {
+        font-size: 10px;
+    }
+
+    body {
+        padding: 2.5em;
+        padding-top: 0em;
+    }
 }

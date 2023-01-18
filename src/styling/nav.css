@@ -47,3 +47,21 @@ nav.nav a {
     color: var(--red);
     font-weight: bold;
 }
+
+@media ( max-width: 900px ) {
+    nav.nav img {
+        height: 4em;
+        width: 12em;
+    }
+}
+
+@media ( max-width: 650px ) {
+    nav.nav img {
+        height: 3em;
+        width: 9em;
+    }
+
+    nav.nav a {
+        font-size: 1.5rem;
+    }
+}
