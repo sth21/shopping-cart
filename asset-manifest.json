@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.af907a8e.css",
+    "main.js": "/shopping-cart/static/js/main.40690b85.js",
+    "static/media/donuts.jpg": "/shopping-cart/static/media/donuts.a64bfd2569592d63b20f.jpg",
+    "static/media/egg-cheese.png": "/shopping-cart/static/media/egg-cheese.4158cdc18822aa4cb3ee.png",
+    "static/media/turkeysausage-egg-cheese.png": "/shopping-cart/static/media/turkeysausage-egg-cheese.06aed972d7a6e6156ee0.png",
+    "static/media/sausage-egg-cheese.png": "/shopping-cart/static/media/sausage-egg-cheese.4bcf5435fec765e9bf4f.png",
+    "static/media/blueberry-frosted-donut.png": "/shopping-cart/static/media/blueberry-frosted-donut.30e81fa94c515faf7615.png",
+    "static/media/strawberry-glazed-donut.png": "/shopping-cart/static/media/strawberry-glazed-donut.52c0bf3c6864ee53e2ee.png",
+    "static/media/glazed-cruller-donut.png": "/shopping-cart/static/media/glazed-cruller-donut.4fe1e2ef49cf7eae7743.png",
+    "static/media/chocolate-glazed-donut.png": "/shopping-cart/static/media/chocolate-glazed-donut.a8b3673b268102f47702.png",
+    "static/media/apple-fritter-donut.png": "/shopping-cart/static/media/apple-fritter-donut.eb34093f1d4c67498140.png",
+    "static/media/boston-creme-donut.png": "/shopping-cart/static/media/boston-creme-donut.34ad18c52ccadb741e30.png",
+    "static/media/maple-donut.png": "/shopping-cart/static/media/maple-donut.91434b62c0b7df2a4ebc.png",
+    "static/media/jelly-donut.png": "/shopping-cart/static/media/jelly-donut.6cd29a549367cf253146.png",
+    "static/media/glazed-donut.png": "/shopping-cart/static/media/glazed-donut.50d630d7c4940a1a23dd.png",
+    "static/media/bacon-egg-cheese.png": "/shopping-cart/static/media/bacon-egg-cheese.3b1752abb6ed311e5825.png",
+    "static/media/mocha.png": "/shopping-cart/static/media/mocha.1b4977e5444dec36b50a.png",
+    "static/media/doughnut.png": "/shopping-cart/static/media/doughnut.669a212cfdd1f4723de4.png",
+    "static/media/brewed-coffee.png": "/shopping-cart/static/media/brewed-coffee.ce11b20e46e87ae6895f.png",
+    "static/media/cappuccino.png": "/shopping-cart/static/media/cappuccino.7f08e471c61ce6d98293.png",
+    "static/media/latte.png": "/shopping-cart/static/media/latte.d50902600e870a1b95e7.png",
+    "static/media/americano.png": "/shopping-cart/static/media/americano.a5f57d9b8aeac06d2a69.png",
+    "static/media/DonuttyDark.svg": "/shopping-cart/static/media/DonuttyDark.e2dd3ebe53fc86dc88c5ad28786378db.svg",
+    "static/media/DonuttyLight.svg": "/shopping-cart/static/media/DonuttyLight.da372756f5d42fa0d53ab451a1c05773.svg",
+    "static/media/espresso.png": "/shopping-cart/static/media/espresso.87e26cf5ef452812adb9.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.af907a8e.css.map": "/shopping-cart/static/css/main.af907a8e.css.map",
+    "main.40690b85.js.map": "/shopping-cart/static/js/main.40690b85.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af907a8e.css",
+    "static/js/main.40690b85.js"
+  ]
+}
